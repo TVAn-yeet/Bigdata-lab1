@@ -1,0 +1,13 @@
+# Kubernetes credentials
+kubeconfigs/
+*-kubeconfig.yaml
+*.kubeconfig
+
+# Secrets / credentials
+*.secret.yaml
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+.vscode/
