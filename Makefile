@@ -33,13 +33,13 @@ identities:
 secrets:
 	NS="$${NS:?set NS}" scripts/member2/apply_secrets.sh
 
-storage:
-	envsubst '$${STORAGE_IMAGE} $${STORAGE_CLASS}' < manifests/member2/storage.yaml.tpl | kubectl -n "$${NS:?set NS}" apply -f -
+storage: secrets
+	NS="$${NS:?set NS}" scripts/member2/apply_storage.sh
 
-clients:
+clients: storage
 	NS="$${NS:?set NS}" CLIENT_IMAGE="$${CLIENT_IMAGE:?set CLIENT_IMAGE}" scripts/member2/clients.sh
 
-seed:
+seed: clients
 	NS="$${NS:?set NS}" scripts/member2/seed_and_verify.sh
 
 task2-evidence:
@@ -59,4 +59,3 @@ benchmark-summary:
 
 recover:
 	NS="$${NS:?set NS}" scripts/member4/recover.sh
-
