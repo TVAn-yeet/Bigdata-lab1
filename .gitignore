@@ -1,0 +1,15 @@
+# Generated credentials and token-only kubeconfigs. Never commit these files.
+/private/*
+!/private/README.md
+*.kubeconfig
+/kubeconfig
+
+# Python cache and local tooling state.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Keep evidence templates and reviewed results; credentials must never be copied here.
+/evidence/**/.DS_Store
+
