@@ -1,2 +1,6 @@
-NAME                       READY   STATUS    RESTARTS   AGE   IP           NODE                                          NOMINATED NODE   READINESS GATES
-objects-6cd66d9756-b5n5t   1/1     Running   0          12m   10.16.0.19   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+NAME                       READY   STATUS    RESTARTS   AGE     IP           NODE                                          NOMINATED NODE   READINESS GATES
+analyst                    1/1     Running   0          3m21s   10.16.0.24   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+blocked                    1/1     Running   0          3m20s   10.16.0.25   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+ingestor                   1/1     Running   0          3m21s   10.16.0.23   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+objects-6cd66d9756-b5n5t   1/1     Running   0          48m     10.16.0.19   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+owner                      1/1     Running   0          3m22s   10.16.0.22   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>

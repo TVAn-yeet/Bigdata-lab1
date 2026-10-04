@@ -1,11 +1,15 @@
 NAME                           READY   STATUS    RESTARTS   AGE   IP           NODE                                          NOMINATED NODE   READINESS GATES
-pod/objects-6cd66d9756-b5n5t   1/1     Running   0          12m   10.16.0.19   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+pod/analyst                    1/1     Running   0          13m   10.16.0.24   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+pod/blocked                    1/1     Running   0          13m   10.16.0.25   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+pod/ingestor                   1/1     Running   0          13m   10.16.0.23   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+pod/objects-6cd66d9756-b5n5t   1/1     Running   0          58m   10.16.0.19   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
+pod/owner                      1/1     Running   0          13m   10.16.0.22   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
 
 NAME                                STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE    VOLUMEMODE
-persistentvolumeclaim/object-data   Bound    pvc-6082810d-de97-47f0-8f13-5e1f66e133af   4Gi        RWO            standard-rwo   <unset>                 140m   Filesystem
+persistentvolumeclaim/object-data   Bound    pvc-6082810d-de97-47f0-8f13-5e1f66e133af   4Gi        RWO            standard-rwo   <unset>                 3h7m   Filesystem
 
 NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE   SELECTOR
-service/objects   ClusterIP   34.118.230.245   <none>        8333/TCP   12m   app=objects
+service/objects   ClusterIP   34.118.230.245   <none>        8333/TCP   58m   app=objects
 
 NAME                                           ADDRESSTYPE   PORTS   ENDPOINTS    AGE
-endpointslice.discovery.k8s.io/objects-gxm5q   IPv4          8333    10.16.0.19   12m
+endpointslice.discovery.k8s.io/objects-gxm5q   IPv4          8333    10.16.0.19   58m
