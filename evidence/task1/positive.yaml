@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: quota-positive
+  name: quota-positive
+  namespace: bigdata-lab1
+spec:
+  securityContext:
+    runAsNonRoot: true
+  containers:
+  - image: asia-southeast1-docker.pkg.dev/project-6d752cd4-bbec-4fc9-ba7/bigdata-lab1/s3lab-client@sha256:29244359a1b993f4509c2585ccb7075cf7bef92988dbca4df20cb16000641c06
+    name: quota-positive
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

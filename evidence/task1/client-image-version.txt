@@ -1,0 +1,15 @@
+Client image specification
+==========================
+
+Python image:
+python@sha256:dddfd7e07f9d15aeeca61529320492139d21cac7f0070c00609243e51e4e0016
+
+boto3 version:
+1.40.45
+
+s3lab.py:
+Appendix C1 + C2 + C3 concatenated into one file
+
+Team policy:
+All team members must use the same Python image digest
+and the same boto3 version when building CLIENT_IMAGE.
