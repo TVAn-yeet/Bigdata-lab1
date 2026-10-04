@@ -1,0 +1,180 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2026-10-04T06:25:01Z"
+    generateName: objects-6cd66d9756-
+    generation: 1
+    labels:
+      app: objects
+      pod-template-hash: 6cd66d9756
+      topology.kubernetes.io/region: asia-southeast1
+      topology.kubernetes.io/zone: asia-southeast1-b
+    name: objects-6cd66d9756-ntwnx
+    namespace: bigdata-lab1
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: objects-6cd66d9756
+      uid: eef70cbb-0792-41bc-9f37-10e9fa1c7261
+    resourceVersion: "1791095107799167016"
+    uid: 1a86aa76-ef9a-4946-ae15-97330808142a
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - args:
+      - mini
+      - -dir=/data
+      - -s3.config=/auth/s3.json
+      command:
+      - weed
+      image: asia-southeast1-docker.pkg.dev/project-6d752cd4-bbec-4fc9-ba7/bigdata-lab1/seaweedfs@sha256:8abd9f9e5790b92065d98c75b346445bd40f2233e4b2f91fce632ec080e28b4d
+      imagePullPolicy: IfNotPresent
+      name: store
+      ports:
+      - containerPort: 8333
+        name: s3
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        initialDelaySeconds: 5
+        periodSeconds: 3
+        successThreshold: 1
+        tcpSocket:
+          port: s3
+        timeoutSeconds: 1
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /data
+        name: data
+      - mountPath: /auth
+        name: auth
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-bigdata-lab1-default-pool-05746bc7-06cn
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 1000
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: object-data
+    - name: auth
+      secret:
+        defaultMode: 420
+        items:
+        - key: s3.json
+          path: s3.json
+        secretName: s3-config
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T06:25:03Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T06:25:02Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T06:25:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T06:25:07Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-10-04T06:25:02Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 500m
+        memory: 512Mi
+      containerID: containerd://b60524a49cdd0998728025223b1438cb763dbcbff3eb500fe830d0ca15f21c13
+      image: docker.io/chrislusf/seaweedfs:latest
+      imageID: asia-southeast1-docker.pkg.dev/project-6d752cd4-bbec-4fc9-ba7/bigdata-lab1/seaweedfs@sha256:8abd9f9e5790b92065d98c75b346445bd40f2233e4b2f91fce632ec080e28b4d
+      lastState: {}
+      name: store
+      ready: true
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-10-04T06:25:02Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /data
+        name: data
+      - mountPath: /auth
+        name: auth
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 10.148.0.4
+    hostIPs:
+    - ip: 10.148.0.4
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.16.0.26
+    podIPs:
+    - ip: 10.16.0.26
+    qosClass: Burstable
+    startTime: "2026-10-04T06:25:02Z"
+kind: List
+metadata:
+  resourceVersion: ""

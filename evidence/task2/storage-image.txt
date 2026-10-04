@@ -1,0 +1,1 @@
+asia-southeast1-docker.pkg.dev/project-6d752cd4-bbec-4fc9-ba7/bigdata-lab1/seaweedfs@sha256:8abd9f9e5790b92065d98c75b346445bd40f2233e4b2f91fce632ec080e28b4d

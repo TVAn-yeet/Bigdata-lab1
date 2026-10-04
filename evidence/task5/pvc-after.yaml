@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"object-data","namespace":"bigdata-lab1"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"4Gi"}}}}
+    pv.kubernetes.io/bind-completed: "yes"
+    pv.kubernetes.io/bound-by-controller: "yes"
+    volume.beta.kubernetes.io/storage-provisioner: pd.csi.storage.gke.io
+    volume.kubernetes.io/selected-node: gke-bigdata-lab1-default-pool-05746bc7-06cn
+    volume.kubernetes.io/storage-provisioner: pd.csi.storage.gke.io
+  creationTimestamp: "2026-10-04T02:55:39Z"
+  finalizers:
+  - kubernetes.io/pvc-protection
+  name: object-data
+  namespace: bigdata-lab1
+  resourceVersion: "1791090255608255012"
+  uid: 6082810d-de97-47f0-8f13-5e1f66e133af
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
+  storageClassName: standard-rwo
+  volumeMode: Filesystem
+  volumeName: pvc-6082810d-de97-47f0-8f13-5e1f66e133af
+status:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 4Gi
+  phase: Bound

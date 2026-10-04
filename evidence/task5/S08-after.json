@@ -1,0 +1,1 @@
+{"bucket": "research-release", "bytes": 0, "error": "AccessDenied", "http": 403, "key": "auth-probe.txt", "ms": 50.51492899656296, "ok": false, "op": "put", "principal": "analyst", "request_id": "18DB40374C99AF76A9C4E1A9", "utc": "2026-10-04T06:38:03.102212+00:00"}
