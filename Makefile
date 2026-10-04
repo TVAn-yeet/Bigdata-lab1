@@ -28,22 +28,22 @@ quota-probes:
 	NS="$${NS:?set NS}" CLIENT_IMAGE="$${CLIENT_IMAGE:?set CLIENT_IMAGE}" scripts/member1/task1.sh
 
 identities:
-	python3 scripts/member2/make_identities.py
+	python3 scripts/storage/make_identities.py
 
 secrets:
-	NS="$${NS:?set NS}" scripts/member2/apply_secrets.sh
+	NS="$${NS:?set NS}" scripts/storage/apply_secrets.sh
 
 storage: secrets
-	NS="$${NS:?set NS}" scripts/member2/apply_storage.sh
+	NS="$${NS:?set NS}" scripts/storage/apply_storage.sh
 
 clients: storage
-	NS="$${NS:?set NS}" CLIENT_IMAGE="$${CLIENT_IMAGE:?set CLIENT_IMAGE}" scripts/member2/clients.sh
+	NS="$${NS:?set NS}" CLIENT_IMAGE="$${CLIENT_IMAGE:?set CLIENT_IMAGE}" scripts/storage/clients.sh
 
 seed: clients
-	NS="$${NS:?set NS}" scripts/member2/seed_and_verify.sh
+	NS="$${NS:?set NS}" scripts/storage/seed_and_verify.sh
 
 task2-evidence:
-	NS="$${NS:?set NS}" scripts/member2/capture_storage_evidence.sh
+	NS="$${NS:?set NS}" scripts/storage/capture_storage_evidence.sh
 
 access:
 	envsubst '$${NS}' < manifests/member3/access.yaml.tpl | kubectl -n "$${NS:?set NS}" apply -f -

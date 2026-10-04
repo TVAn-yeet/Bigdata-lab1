@@ -11,7 +11,7 @@ esac
 
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
 kubectl get storageclass "$STORAGE_CLASS" >/dev/null
-envsubst '${STORAGE_IMAGE} ${STORAGE_CLASS}' < "$ROOT/manifests/member2/storage.yaml.tpl" \
+envsubst '${STORAGE_IMAGE} ${STORAGE_CLASS}' < "$ROOT/manifests/storage/storage.yaml.tpl" \
   | kubectl -n "$NS" apply -f -
 kubectl -n "$NS" rollout status deployment/objects --timeout=120s
 kubectl -n "$NS" wait --for=jsonpath='{.status.phase}'=Bound pvc/object-data --timeout=120s

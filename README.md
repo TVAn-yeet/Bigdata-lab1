@@ -8,7 +8,7 @@ The manifests and scripts use the lab contract. They do not contain cluster cred
 
 1. Read [`docs/architecture.md`](docs/architecture.md) and [`docs/runbook.md`](docs/runbook.md).
 2. Set `NS`, `STORAGE_IMAGE`, `CLIENT_IMAGE`, and `STORAGE_CLASS` using values supplied for the assigned cluster. Confirm `kubectl config current-context` and that the assigned namespace exists.
-3. Create local credentials with `python3 scripts/member2/make_identities.py`. Keep `private/` private and out of Git.
+3. Create local credentials with `python3 scripts/storage/make_identities.py`. Keep `private/` private and out of Git.
 4. Follow the runbook in order. Apply only to the assigned namespace. Collect actual outputs under `evidence/`; do not fill results from assumptions.
 
 The role branches are `member1`, `member2`, `member3`, and `member4`. `main` is the locally integrated branch. Commits in this repository are local; no remote is configured by this project.

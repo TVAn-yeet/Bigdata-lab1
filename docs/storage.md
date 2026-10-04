@@ -1,4 +1,4 @@
-# Member 2 — persistent storage and S3
+# Persistent storage and S3
 
 Member 2 owns the object-data PersistentVolumeClaim and the storage/S3 path after the team's PVC handoff. The manifest uses the assigned StorageClass, requests 4Gi with ReadWriteOnce, and mounts the claim at /data. SeaweedFS runs as one replica with the Recreate strategy; its data and metadata stay under /data. The Pod runs non-root with user/group/fsGroup 1000, drops all capabilities, disables ServiceAccount token mounting, and exposes only the S3 Service on TCP 8333.
 
