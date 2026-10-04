@@ -1,0 +1,6 @@
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/analyst                    1/1     Running   0          18m
+pod/blocked                    1/1     Running   0          18m
+pod/ingestor                   1/1     Running   0          18m
+pod/objects-6cd66d9756-b5n5t   1/1     Running   0          63m
+pod/owner                      1/1     Running   0          18m

@@ -1,0 +1,6 @@
+I1004 05:04:30  weed mini: starting master service on 10.16.0.19:9333
+I1004 05:04:30  weed mini: starting volume service on 10.16.0.19:8080
+I1004 05:04:30  weed mini: starting filer service on 10.16.0.19:8888
+I1004 05:04:30  weed mini: starting S3 service on 10.16.0.19:8333
+I1004 05:04:30  weed mini: loaded identities from /auth/s3.json
+I1004 05:04:34  weed mini: storage readiness probe TCP check port 8333 passed

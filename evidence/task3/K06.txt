@@ -1,0 +1,1 @@
+Error from server (Forbidden): pods "objects-6cd66d9756-b5n5t" is forbidden: User "system:serviceaccount:bigdata-lab1:observer" cannot delete resource "pods" in API group "" in the namespace "bigdata-lab1"

@@ -1,0 +1,23 @@
+test_id,principal,target,expected,actual,status,operator,reviewer,evidence_path
+S01,ingestor,PUT research-raw/auth-probe.txt,Allow,HTTP 200 (bytes: 25),pass,Member-3,Member-4,evidence/task3/S01.json
+S02,ingestor,GET research-raw/fixture.txt,Allow,HTTP 200 (sha256: 9ce4c8bb96c85122c3b386653fbe9150cb2f4df03f25c83408fe11c29b87d6f8),pass,Member-3,Member-4,evidence/task3/S02.json
+S03,ingestor,LIST research-raw,Allow,HTTP 200 (3 keys listed),pass,Member-3,Member-4,evidence/task3/S03.json
+S04,ingestor,PUT research-release/auth-probe.txt,Deny,HTTP 403 AccessDenied,pass,Member-3,Member-4,evidence/task3/S04.json
+S05,ingestor,GET research-release/fixture.txt,Deny,HTTP 403 AccessDenied,pass,Member-3,Member-4,evidence/task3/S05.json
+S06,analyst,GET research-release/fixture.txt,Allow,HTTP 200 (sha256: 9ce4c8bb96c85122c3b386653fbe9150cb2f4df03f25c83408fe11c29b87d6f8),pass,Member-3,Member-4,evidence/task3/S06.json
+S07,analyst,LIST research-release,Allow,HTTP 200 (2 keys listed),pass,Member-3,Member-4,evidence/task3/S07.json
+S08,analyst,PUT research-release/auth-probe.txt,Deny,HTTP 403 AccessDenied,pass,Member-3,Member-4,evidence/task3/S08.json
+S09,analyst,DELETE research-release/delete-probe.txt,Deny,HTTP 403 AccessDenied,pass,Member-3,Member-4,evidence/task3/S09.json
+S10,analyst,GET research-raw/fixture.txt,Deny,HTTP 403 AccessDenied,pass,Member-3,Member-4,evidence/task3/S10.json
+S11,analyst,LIST research-raw,Deny,HTTP 403 AccessDenied,pass,Member-3,Member-4,evidence/task3/S11.json
+S12,anonymous,GET research-release/fixture.txt,Deny,HTTP 403 AccessDenied,pass,Member-3,Member-4,evidence/task3/S12.json
+K01,observer,kubectl get pods,Allow,HTTP 200 (Listed 5 Pods in bigdata-lab1),pass,Member-3,Member-1,evidence/task3/K01.txt
+K02,observer,kubectl get events,Allow,HTTP 200 (Listed namespace events),pass,Member-3,Member-1,evidence/task3/K02.txt
+K03,observer,kubectl logs objects-6cd66d9756-b5n5t,Allow,HTTP 200 (Retrieved SeaweedFS logs),pass,Member-3,Member-1,evidence/task3/K03.txt
+K04,observer,kubectl get secret s3-config,Deny,HTTP 403 Forbidden (secrets is forbidden),pass,Member-3,Member-1,evidence/task3/K04.txt
+K05,observer,kubectl create -f positive.yaml --dry-run=server,Deny,HTTP 403 Forbidden (pods is forbidden),pass,Member-3,Member-1,evidence/task3/K05.txt
+K06,observer,kubectl delete pod objects-6cd66d9756-b5n5t --dry-run=server,Deny,HTTP 403 Forbidden (pods is forbidden),pass,Member-3,Member-1,evidence/task3/K06.txt
+N01,owner,TCP objects:8333,Connect,TCP Connected: True,pass,Member-3,Member-2,evidence/task3/N01.json
+N02,blocked,TCP objects:8333,Blocked,TCP Blocked (TimeoutError after 3s),pass,Member-3,Member-2,evidence/task3/N02.json
+N03,owner,TCP 10.16.0.19:8888,Blocked,TCP Blocked (TimeoutError after 3s),pass,Member-3,Member-2,evidence/task3/N03.json
+N04,outsider,TCP objects.bigdata-lab1.svc.cluster.local:8333,Blocked,TCP Blocked (TimeoutError after 3s),pass,Member-3,Member-2,evidence/task3/N04.json

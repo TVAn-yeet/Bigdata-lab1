@@ -1,0 +1,1 @@
+Error from server (Forbidden): error when creating "positive.yaml": pods is forbidden: User "system:serviceaccount:bigdata-lab1:observer" cannot create resource "pods" in API group "" in the namespace "bigdata-lab1"

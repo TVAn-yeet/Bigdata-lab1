@@ -1,0 +1,1 @@
+{"bucket": "research-raw", "bytes": 0, "error": null, "http": 200, "key": "", "keys": ["auth-probe.txt", "delete-probe.txt", "fixture.txt"], "ms": 14.821039989590645, "ok": true, "op": "list", "principal": "ingestor", "request_id": "18DB3DA91E2374981C09DA76", "utc": "2026-10-04T05:51:14.391204+00:00"}

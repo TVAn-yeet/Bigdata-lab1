@@ -1,0 +1,9 @@
+LAST SEEN   TYPE     REASON      OBJECT                         MESSAGE
+18m         Normal   Scheduled   pod/analyst                    Successfully assigned bigdata-lab1/analyst to gke-bigdata-lab1-default-pool-05746bc7-06cn
+18m         Normal   Pulled      pod/analyst                    Container image "asia-southeast1-docker.pkg.dev/project-6d752cd4-bbec-4fc9-ba7/bigdata-lab1/s3lab-client@sha256:29244359a1b993f4509c2585ccb7075cf7bef92988dbca4df20cb16000641c06" already present on machine
+18m         Normal   Created     pod/analyst                    Created container client
+18m         Normal   Started     pod/analyst                    Started container client
+63m         Normal   Scheduled   pod/objects-6cd66d9756-b5n5t   Successfully assigned bigdata-lab1/objects-6cd66d9756-b5n5t to gke-bigdata-lab1-default-pool-05746bc7-06cn
+63m         Normal   Pulled      pod/objects-6cd66d9756-b5n5t   Container image "asia-southeast1-docker.pkg.dev/project-6d752cd4-bbec-4fc9-ba7/bigdata-lab1/seaweedfs@sha256:8abd9f9e5790b92065d98c75b346445bd40f2233e4b2f91fce632ec080e28b4d" already present on machine
+63m         Normal   Created     pod/objects-6cd66d9756-b5n5t   Created container store
+63m         Normal   Started     pod/objects-6cd66d9756-b5n5t   Started container store

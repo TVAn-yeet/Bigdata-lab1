@@ -1,0 +1,44 @@
+[
+  {
+    "bucket": "research-raw",
+    "owner": "student-A",
+    "steward": "student-E",
+    "classification": "synthetic-restricted",
+    "purpose": "lab ingestion",
+    "retention": "assessment completion + 7 days",
+    "retention_enforced": false,
+    "cleanup_owner": "instructor",
+    "access_policy": "bucket-scoped roles",
+    "verified_tests": [
+      "S01",
+      "S02",
+      "S03",
+      "S10",
+      "S11"
+    ],
+    "approved_by": "student-C",
+    "policy_revision": "a000bf3319638ee5836e92facf0a15ec097c1877"
+  },
+  {
+    "bucket": "research-release",
+    "owner": "student-A",
+    "steward": "student-E",
+    "classification": "synthetic-restricted",
+    "purpose": "lab approved releases",
+    "retention": "assessment completion + 7 days",
+    "retention_enforced": false,
+    "cleanup_owner": "instructor",
+    "access_policy": "bucket-scoped roles",
+    "verified_tests": [
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S12"
+    ],
+    "approved_by": "student-C",
+    "policy_revision": "a000bf3319638ee5836e92facf0a15ec097c1877"
+  }
+]
