@@ -1,0 +1,2 @@
+NAME          REQUEST                                                                                                                LIMIT                                     AGE
+team-budget   persistentvolumeclaims: 1/2, pods: 1/10, requests.cpu: 500m/2, requests.memory: 512Mi/2Gi, requests.storage: 4Gi/8Gi   limits.cpu: 1/4, limits.memory: 1Gi/4Gi   142m

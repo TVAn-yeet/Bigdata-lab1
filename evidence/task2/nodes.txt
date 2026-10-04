@@ -1,0 +1,2 @@
+NAME                                          STATUS   ROLES    AGE   VERSION               INTERNAL-IP   EXTERNAL-IP      OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-bigdata-lab1-default-pool-05746bc7-06cn   Ready    <none>   35h   v1.35.8-gke.1225000   10.148.0.4    34.143.173.149   Container-Optimized OS from Google   6.12.94+         containerd://2.2.7

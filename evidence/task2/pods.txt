@@ -1,0 +1,2 @@
+NAME                       READY   STATUS    RESTARTS   AGE   IP           NODE                                          NOMINATED NODE   READINESS GATES
+objects-6cd66d9756-b5n5t   1/1     Running   0          12m   10.16.0.19   gke-bigdata-lab1-default-pool-05746bc7-06cn   <none>           <none>
