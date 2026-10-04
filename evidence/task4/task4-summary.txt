@@ -1,0 +1,43 @@
+TASK 4 — BENCHMARK SUMMARY
+
+Workload:
+- 32 distinct deterministic objects per trial
+- 4 MiB per object
+- 128 MiB PUT phase + 128 MiB GET phase
+- 3 trials at concurrency 1
+- 3 trials at concurrency 4
+- 32 PUT + 32 verified GET requests per phase/trial
+
+Results:
+
+Trial    C    PUT goodput    PUT p95    GET goodput    GET p95    Success
+r1-c1    1    56.63 MiB/s    251.39 ms  173.08 MiB/s    29.89 ms   32/32
+r1-c4    4    70.49 MiB/s    447.43 ms  157.85 MiB/s   121.79 ms   32/32
+r2-c1    1    57.67 MiB/s    251.50 ms  190.84 MiB/s    36.84 ms   32/32
+r2-c4    4    76.05 MiB/s    507.29 ms  154.83 MiB/s   103.88 ms   32/32
+r3-c1    1    53.06 MiB/s    257.33 ms  178.94 MiB/s    37.66 ms   32/32
+r3-c4    4    71.96 MiB/s    355.11 ms  168.84 MiB/s   122.86 ms   32/32
+
+Median comparison:
+PUT:
+- C=1 median: 56.63 MiB/s
+- C=4 median: 71.96 MiB/s
+- C4/C1: 1.27x
+
+GET:
+- C=1 median: 178.94 MiB/s
+- C=4 median: 157.85 MiB/s
+- C4/C1: 0.88x
+
+Integrity:
+- All six trials: success_ratio = 1.0
+- All trials: 32/32 successful requests per phase
+- GET verification: hash_ok = true
+
+Observation:
+Concurrency 4 improved PUT goodput by approximately 27%, but did not improve GET goodput.
+Concurrency 4 also increased p95 latency for both PUT and GET.
+
+Resource sampling:
+- resource-samples.txt was collected during the benchmark.
+- No Metrics API errors were recorded.
